@@ -1,27 +1,28 @@
+import React from "react";
+import { Container, Header, Grid, Message } from "semantic-ui-react"; // Import the Message component
 
-import { Container, Header, Grid } from "semantic-ui-react";
 import RecipeListItem from "./RecipeListItem";
 
 const RecipeList = ({ recipes, searchedQuery }) => {
+  return (
+    <Container>
+      {/* Add a Message component to give visual feedback about the searched ingredient */}
+      <Message info style={{ margin: "20px" }}>
+        <Message.Header>
+          Here are the recipes containing "{searchedQuery}"
+        </Message.Header>
+      </Message>
 
-    return (
-        <Container>
-            <Header 
-                size="huge"
-                content={`RECIPE LIST FOR ${searchedQuery}`}
-                textAlign='center'
-            />
-            <Grid columns={4} doubling>
-                { 
-                    recipes && recipes.map(recipe => (
-                        <Grid.Column>
-                            <RecipeListItem recipe={recipe} />
-                        </Grid.Column>
-                    ))
-                }
-            </Grid>
-        </Container>
-    )
-}
+      <Grid columns={4} doubling>
+        {recipes &&
+          recipes.map((recipe) => (
+            <Grid.Column key={recipe.id}>
+              <RecipeListItem recipe={recipe} />
+            </Grid.Column>
+          ))}
+      </Grid>
+    </Container>
+  );
+};
 
 export default RecipeList;

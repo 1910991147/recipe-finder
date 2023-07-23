@@ -1,31 +1,68 @@
-import { useState } from 'react';
-import { Grid, Form, Input } from 'semantic-ui-react';
+import { useState } from "react";
+import { Grid, Input, Form } from "semantic-ui-react";
 
 const Search = ({ setSearchedQuery }) => {
-    const [value, setValue] = useState("");
+  const [value, setValue] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
 
-    const onFormSubmit = () => {
-        setSearchedQuery(value);
+  const onFormSubmit = () => {
+    if (value.trim() === "") {
+      // Show the alert message if input is empty
+      setShowAlert(true);
+    } else {
+      // Hide the alert message and perform the search
+      setShowAlert(false);
+      setSearchedQuery(value);
     }
+  };
 
-    return (
-        <Grid column={2} textAlign="center" className='search-box'>
-            <Grid.Column>
-                <h2 className='search-heading'>
-                    Search Recipes with <span style={{ color: '#2185D0' }}>Our Recipe</span>
-                </h2>
-                <h4>Input Recipes seperated by comma</h4>
-                <Form onSubmit={onFormSubmit}>
-                    <Input 
-                        placeholder="tomato,potato,pizza"
-                        action={{ icon: 'search', color: 'blue' }}
-                        onChange={(e) => setValue(e.target.value)}
-                        value={value}
-                    />
-                </Form>
-            </Grid.Column>
-        </Grid>
-    )
-}
+  const onInputChange = (e, { value }) => {
+    // Hide the alert message when the user starts typing
+    setShowAlert(false);
+    setValue(value);
+  };
+
+  return (
+    <Grid container centered>
+      <Grid.Row>
+        <Grid.Column mobile={16} tablet={12} computer={10} textAlign="center">
+          <Form onSubmit={onFormSubmit}>
+            <Form.Field style={{ width: "100%" }}>
+              {showAlert && (
+                <header
+                  style={{
+                    color: "red",
+                    fontSize: "16px",
+                    margin: 0,
+                    textAlign: "center",
+                  }}
+                >
+                  Please enter ingredients!
+                </header>
+              )}
+              <Input
+                icon="search"
+                iconPosition="left"
+                placeholder="enter some ingredient like tomato or onion"
+                action={{
+                  content: "Search",
+                  color: "blue",
+                  style: { borderRadius: "0 4px 4px 0" },
+                }}
+                onChange={onInputChange}
+                value={value}
+                style={{
+                  borderRadius: "4px",
+                  height: "50px", // Adjust the height as desired
+                  width: "100%", // Make it full width
+                }}
+              />
+            </Form.Field>
+          </Form>
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+  );
+};
 
 export default Search;
