@@ -75,7 +75,6 @@ const RecipeListItem = ({ recipe }) => {
           </div>
         </div>
       </div>
-      {/* Show name */}
       <Card.Content>
         <Card.Header content={recipe.title} />
       </Card.Content>

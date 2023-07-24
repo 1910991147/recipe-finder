@@ -1,4 +1,4 @@
-export const logo = 'https://www.pngall.com/wp-content/uploads/8/Recipe-Transparent.png';
+export const logo = 'https://cdn-icons-png.flaticon.com/512/7595/7595720.png';
 
 
 export const API_URL = 'https://forkify-api.herokuapp.com/api';

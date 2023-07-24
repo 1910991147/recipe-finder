@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Header, Grid, Message } from "semantic-ui-react"; // Import the Message component
+import { Container, Grid, Message } from "semantic-ui-react"; // Import the Message component
 
 import RecipeListItem from "./RecipeListItem";
 
