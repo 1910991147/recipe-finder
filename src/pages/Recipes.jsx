@@ -4,6 +4,7 @@ import RecipeList from "../components/RecipeList";
 import { getRecipes } from "../services/api";
 import Footer from "../components/Footer";
 
+// this is the homepage where we have a search bar and list of recipes.
 const Recipes = () => {
   const [searchedQuery, setSearchedQuery] = useState("pizza");
   const [recipes, setRecipes] = useState([]);
@@ -23,7 +24,7 @@ const Recipes = () => {
     <>
       <Search setSearchedQuery={setSearchedQuery} />
       <RecipeList recipes={recipes} searchedQuery={searchedQuery} />
-      <Footer/>
+      <Footer />
     </>
   );
 };

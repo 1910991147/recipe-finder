@@ -37,7 +37,7 @@ const Search = ({ setSearchedQuery }) => {
                     textAlign: "center",
                   }}
                 >
-                  Please enter ingredients!
+                  Please enter the ingredients!
                 </header>
               )}
               <Input

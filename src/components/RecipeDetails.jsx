@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Grid, Header, Image, List } from "semantic-ui-react";
 import { getRecipe } from "../services/api";
 
+// this component shows the image of recipe and its ingridients list.
 const RecipeDetails = () => {
   const [recipe, setRecipe] = useState({});
 

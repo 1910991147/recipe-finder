@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu } from "semantic-ui-react";
 import { logo } from "../../constants/constant";
 
+// this is the navbar of webpage which has logo and title
 const NavBar = () => {
   const menuItemStyle = {
     color: "#f15025",

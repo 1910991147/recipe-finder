@@ -1,15 +1,13 @@
 import React from "react";
 import { Segment, Container } from "semantic-ui-react";
 
+// this is a footer of a webpage
 const Footer = () => {
   return (
     <div
       style={{ display: "flex", flexDirection: "column", maxHeight: "100vh" }}
     >
-      <div style={{ flex: 1 }}>
-        {/* Content of your page goes here */}
-        {/* Replace this div with your actual page content */}
-      </div>
+      <div style={{ flex: 1 }}></div>
       <Segment
         inverted
         vertical

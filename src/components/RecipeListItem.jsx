@@ -20,7 +20,7 @@ const RecipeListItem = ({ recipe }) => {
         padding: "1rem",
         borderRadius: "10px",
         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-        transform: hovering ? "scale(1.05)" : "scale(1)", // Scale the card on hover
+        transform: hovering ? "scale(1.05)" : "scale(1)",
         transition: "transform 0.3s ease-in-out",
         height: "100%",
       }}
@@ -58,7 +58,7 @@ const RecipeListItem = ({ recipe }) => {
             background: "rgba(0, 0, 0, 0.6)",
             color: "white",
             borderRadius: "0 0 8px 8px",
-            visibility: hovering ? "visible" : "hidden", // Show buttons only on hover
+            visibility: hovering ? "visible" : "hidden",
             transition: "visibility 0.3s ease-in-out",
           }}
         >

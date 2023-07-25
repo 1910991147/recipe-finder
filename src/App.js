@@ -9,7 +9,6 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/" element={<Recipes />} />
         <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
       </Routes>
